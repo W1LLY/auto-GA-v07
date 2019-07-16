@@ -8,7 +8,7 @@ import testingui.diplomadoumss.org.managepage.dashboard.Dashboard;
 import testingui.diplomadoumss.org.managepage.login.Login;
 
 /**
- * @author Willy Kelvis Sanchez Rojas
+ * @author Juan Montaño
  */
 public class LoginStepdefs {
     private Login login;

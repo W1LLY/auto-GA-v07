@@ -6,7 +6,7 @@ import testingui.diplomadoumss.org.managepage.login.Login;
 import testingui.diplomadoumss.org.utilsfiles.PropertyAccesor;
 
 /**
- * @author Willy Kelvis Sanchez Rojas
+ * @author Juan
  */
 public class LoadPage {
 

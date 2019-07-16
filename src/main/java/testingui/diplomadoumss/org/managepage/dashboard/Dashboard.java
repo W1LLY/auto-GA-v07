@@ -6,7 +6,7 @@ import testingui.diplomadoumss.org.managepage.BasePage;
 import testingui.diplomadoumss.org.managepage.cars.Car;
 
 /**
- * @author Willy Kelvis Sanchez Rojas
+ * @author Juan
  */
 public class Dashboard extends BasePage {
 
