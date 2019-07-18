@@ -28,7 +28,6 @@ public class PropertyAccesor {
             e.printStackTrace();
         }
     }
-
     public String getURL(){
         return prop.getProperty("url");
     }
@@ -39,5 +38,21 @@ public class PropertyAccesor {
 
     public static void main(String[] args) {
         System.out.println(PropertyAccesor.getInstance().getURL());
+    }
+
+    public int getImplicitTimeWait() {
+        return Integer.parseInt(prop.getProperty("implicitTimeWait"));
+    }
+
+    public int getExplicitTimeWait() {
+        return Integer.parseInt(prop.getProperty("explicitTimeWait"));
+    }
+
+    public String getEmail() {
+        return prop.getProperty("username");
+    }
+
+    public String getPassword() {
+        return prop.getProperty("password");
     }
 }

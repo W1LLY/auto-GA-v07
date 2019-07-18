@@ -1,4 +1,4 @@
-package testingui.diplomadoumss.org.stepsdefinitions;
+package testingui.diplomadoumss.org;
 
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
@@ -19,12 +19,13 @@ public class LoginStepdefs {
 
     @Given("^I load PHP Travels$")
     public void iLoadPHPTravels() throws Throwable {
-        login = LoadPage.loadPHPTravels();
+        login = LoadPage.loadPPHPTravels();
     }
 
     @And("^Set my credentials on 'Login' page$")
     public void setMyCredentialsOnLoginPage() throws Throwable {
         dashboard = login.setCredentials();
+        //Thread.sleep(15000);
     }
 
     @And("^click 'Cars' link on 'Left Panel' page$")
