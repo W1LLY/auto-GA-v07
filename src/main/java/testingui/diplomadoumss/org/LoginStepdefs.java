@@ -2,8 +2,8 @@ package testingui.diplomadoumss.org;
 
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
+import cucumber.api.java.en.When;
 import testingui.diplomadoumss.org.manageloadpage.LoadPage;
-import testingui.diplomadoumss.org.managepage.cars.Car;
 import testingui.diplomadoumss.org.managepage.dashboard.Dashboard;
 import testingui.diplomadoumss.org.managepage.login.Login;
 
@@ -15,8 +15,6 @@ public class LoginStepdefs {
 
     private Dashboard dashboard;
 
-    private Car cars;
-
     @Given("^I load PHP Travels$")
     public void iLoadPHPTravels() throws Throwable {
         login = LoadPage.loadPPHPTravels();
@@ -25,11 +23,17 @@ public class LoginStepdefs {
     @And("^Set my credentials on 'Login' page$")
     public void setMyCredentialsOnLoginPage() throws Throwable {
         dashboard = login.setCredentials();
-        //Thread.sleep(15000);
     }
 
     @And("^click 'Cars' link on 'Left Panel' page$")
     public void clickCarsLinkOnLeftPanelPage() throws Throwable {
-        cars = dashboard.selectCars();
+        dashboard.clickCarsExpand();
+    }
+
+    @When("^click 'extras' link on 'Left Panel' page$")
+    public void clickExtrasLinkOnLeftPanelPage() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        dashboard.clickExtraExpand();
+
     }
 }

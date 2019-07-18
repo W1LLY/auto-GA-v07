@@ -3,7 +3,6 @@ package testingui.diplomadoumss.org.managepage.dashboard;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import testingui.diplomadoumss.org.managepage.BasePage;
-import testingui.diplomadoumss.org.managepage.cars.Car;
 
 import static testingui.diplomadoumss.org.manageevents.Event.avoidToUse;
 import static testingui.diplomadoumss.org.manageevents.Event.clickWebElement;
@@ -17,29 +16,23 @@ public class Dashboard extends BasePage {
     private WebElement leftPanel;
 
     @FindBy(xpath = "//a[@href='#Cars']")
-    private WebElement cars;
+    private WebElement carsExpand;
 
-    @FindBy(xpath = "//a[@href = 'https://www.phptravels.net/admin-portal/admin/cars']")
-    private WebElement option_cars;
+    @FindBy(xpath = "//a[@href = 'https://www.phptravels.net/admin-portal/admin/cars/extras']")
+    private WebElement extrasExpand;
 
     public Dashboard() {
 //        isWebElementVisible(bookingLink);
-        avoidToUse(3);
+        avoidToUse(5);
     }
 
-    public Dashboard clickCars() {
-        clickWebElement(cars);
+    public Dashboard clickCarsExpand() {
+        clickWebElement(carsExpand);
         return this;
     }
 
-    public void clickOptionCars() {
-        option_cars.click();
-    }
-
-    public Car selectCars() {
-        clickCars();
-        clickOptionCars();
-
-        return new Car();
+    public Dashboard clickExtraExpand() {
+        clickWebElement(extrasExpand);
+        return this;
     }
 }
