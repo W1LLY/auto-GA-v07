@@ -6,8 +6,7 @@ import testingui.diplomadoumss.org.managepage.BasePage;
 import testingui.diplomadoumss.org.managepage.dashboard.Dashboard;
 import testingui.diplomadoumss.org.utilsfiles.PropertyAccesor;
 
-import static testingui.diplomadoumss.org.manageevents.Event.clickWebElement;
-import static testingui.diplomadoumss.org.manageevents.Event.fieldWebElement;
+import static testingui.diplomadoumss.org.manageevents.Event.*;
 
 /**
  * @author Marcelo Garay
@@ -24,7 +23,13 @@ public class Login extends BasePage {
     @FindBy(xpath = "//button[@type='submit']")
     private WebElement buttonField;
 
-    public Dashboard setCredentials() throws InterruptedException {
+    public Login() {
+        //isWebElementVisible(emailTextField);
+        //isWebElementClickable(buttonField);
+        avoidToUse(13000);
+    }
+
+    public Dashboard setCredentials() {
         return setEmail(PropertyAccesor.getInstance().getEmail()).
                 setPassword(PropertyAccesor.getInstance().getPassword()).
                 clickLoginButton();

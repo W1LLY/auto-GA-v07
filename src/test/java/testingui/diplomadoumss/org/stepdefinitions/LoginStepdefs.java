@@ -24,9 +24,8 @@ public class LoginStepdefs {
     }
 
     @And("^Set my credentials on 'Login' page$")
-    public void setMyCredentialsOnLoginPage() throws Throwable {
+    public void setMyCredentialsOnLoginPage() {
         dashboard = login.setCredentials();
-        Thread.sleep(11000);
     }
 
     @And("^click 'Cars' link on 'Left Panel' page$")

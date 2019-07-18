@@ -1,7 +1,6 @@
 package testingui.diplomadoumss.org.core;
 
 import testingui.diplomadoumss.org.managepage.login.Login;
-import testingui.diplomadoumss.org.utilsfiles.PropertyAccesor;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -16,9 +15,9 @@ public class FirstExample {
 
         Login login = new Login();
 //        login.initBrowser();
-        login.setEmail(PropertyAccesor.getInstance().getEmail());
-        login.setPassword(PropertyAccesor.getInstance().getPassword());
-        login.clickLoginButton();
+        //login.setEmail(PropertyAccesor.getInstance().getEmail());
+        //login.setPassword(PropertyAccesor.getInstance().getPassword());
+        //login.clickLoginButton();
 
         Thread.sleep(20000);
         //login.finish();
