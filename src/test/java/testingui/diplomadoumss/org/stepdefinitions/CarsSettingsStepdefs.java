@@ -9,7 +9,7 @@ import testingui.diplomadoumss.org.managepage.dashboard.Dashboard;
 /**
  * @author Willy Kelvis Sanchez Rojas
  */
-public class CarsStepdefs {
+public class CarsSettingsStepdefs {
     private Dashboard dashboard;
 
     private CarsSettings settings;

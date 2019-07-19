@@ -1,14 +1,15 @@
 package testingui.diplomadoumss.org.managepage.dashboard;
 
 
-import static testingui.diplomadoumss.org.manageevents.Event.*;
-
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import testingui.diplomadoumss.org.managepage.BasePage;
 import testingui.diplomadoumss.org.core.DriverManager;
+import testingui.diplomadoumss.org.managepage.BasePage;
 import testingui.diplomadoumss.org.managepage.cars.Cars;
 import testingui.diplomadoumss.org.managepage.cars.CarsSettings;
+
+import static testingui.diplomadoumss.org.manageevents.Event.avoidToUse;
+import static testingui.diplomadoumss.org.manageevents.Event.clickWebElement;
 
 /**
  * @author Marcelo Garay
@@ -41,6 +42,7 @@ public class Dashboard extends BasePage {
     public Dashboard clickCarsExpand() {
         clickWebElement(carsExpand);
         return this;
+    }
 
     public void clickCars() {
         clickWebElement(cars);
