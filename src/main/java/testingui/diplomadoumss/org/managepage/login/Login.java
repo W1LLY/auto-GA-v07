@@ -26,7 +26,7 @@ public class Login extends BasePage {
     public Login() {
         //isWebElementVisible(emailTextField);
         //isWebElementClickable(buttonField);
-        avoidToUse(9000);
+        avoidToUse(8000);
     }
 
     public Dashboard setCredentials() {

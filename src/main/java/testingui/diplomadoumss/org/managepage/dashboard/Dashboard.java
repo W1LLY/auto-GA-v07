@@ -2,6 +2,7 @@ package testingui.diplomadoumss.org.managepage.dashboard;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import testingui.diplomadoumss.org.core.DriverManager;
 import testingui.diplomadoumss.org.managepage.BasePage;
 import testingui.diplomadoumss.org.managepage.cars.Cars;
 import testingui.diplomadoumss.org.managepage.cars.CarsSettings;
@@ -25,9 +26,12 @@ public class Dashboard extends BasePage {
     @FindBy(xpath = "//a[@href = 'https://www.phptravels.net/admin-portal/admin/cars/settings']")
     private WebElement cars_settings;
 
+    @FindBy(xpath = "//nav[@id = 'sidebar']")
+    private WebElement sidebar;
+
     public Dashboard() {
         //isWebElementVisible(bookingLink);
-        avoidToUse(10000);
+        avoidToUse(13000);
     }
 
     public void clickCars() {
@@ -51,8 +55,18 @@ public class Dashboard extends BasePage {
 
     public CarsSettings selectCarsSettings() throws InterruptedException {
         clickCars();
+        fullScreen(true);
+        Thread.sleep(2000);
         clickOptionCarsSettings();
+        fullScreen(false);
 
         return new CarsSettings();
+    }
+
+    public void fullScreen(boolean isFull) {
+        if (isFull)
+            DriverManager.getInstance().getWebDriver().manage().window().fullscreen();
+        else
+            DriverManager.getInstance().getWebDriver().manage().window().maximize();
     }
 }

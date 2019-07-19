@@ -10,6 +10,6 @@ import static testingui.diplomadoumss.org.manageevents.Event.avoidToUse;
 public class CarsSettings extends BasePage {
 
     public CarsSettings() {
-        avoidToUse(2000);
+        avoidToUse(5000);
     }
 }
