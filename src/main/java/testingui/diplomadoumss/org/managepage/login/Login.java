@@ -18,15 +18,29 @@ public class Login extends BasePage {
     private WebElement emailTextField;
 
     @FindBy(xpath = "//input[@name='password' and @type='password']")
-    private WebElement passwordField;
+private WebElement passwordTextField;
 
-    @FindBy(xpath = "//button[@type='submit']")
-    private WebElement buttonField;
+    @FindBy(xpath="//button[@type='submit']")
+    private WebElement loginButton;
 
     public Login() {
-        //isWebElementVisible(emailTextField);
-        //isWebElementClickable(buttonField);
-        avoidToUse(8000);
+//        isWebElementVisible(loginButton);
+        avoidToUse(2);
+    }
+
+    public Login setEmail(String email){
+        fillWebElement(emailTextField, email);
+        return this;
+    }
+
+    public Login setPassword(String password){
+        fillWebElement(passwordTextField, password);
+        return this;
+    }
+
+    public Dashboard clickLoginButton() {
+        clickWebElement(loginButton);
+        return new Dashboard();
     }
 
     public Dashboard setCredentials() {
@@ -34,20 +48,4 @@ public class Login extends BasePage {
                 setPassword(PropertyAccesor.getInstance().getPassword()).
                 clickLoginButton();
     }
-
-    public Login setEmail(String email) {
-        fieldWebElement(emailTextField, email);
-        return this;
-    }
-
-    public Login setPassword(String password) {
-        fieldWebElement(passwordField, password);
-        return this;
-    }
-
-    public Dashboard clickLoginButton() {
-        clickWebElement(buttonField);
-        return new Dashboard();
-    }
-
 }
