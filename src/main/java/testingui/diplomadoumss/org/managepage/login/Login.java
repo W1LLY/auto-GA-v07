@@ -1,6 +1,5 @@
 package testingui.diplomadoumss.org.managepage.login;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import testingui.diplomadoumss.org.managepage.BasePage;
@@ -29,6 +28,10 @@ public class Login extends BasePage {
         avoidToUse(2);
     }
 
+    public void initBrowser() {
+        webDriver.get(PropertyAccesor.getInstance().getURL());
+    }
+
     public Login setEmail(String email){
         fillWebElement(emailTextField, email);
         return this;
@@ -48,5 +51,9 @@ public class Login extends BasePage {
         return setEmail(PropertyAccesor.getInstance().getEmail()).
                 setPassword(PropertyAccesor.getInstance().getPassword()).
                 clickLoginButton();
+    }
+
+    public void finish() {
+        webDriver.quit();
     }
 }

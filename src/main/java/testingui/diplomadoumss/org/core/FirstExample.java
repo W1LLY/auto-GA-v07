@@ -1,17 +1,26 @@
 package testingui.diplomadoumss.org.core;
 
-import org.openqa.selenium.WebDriver;
+import testingui.diplomadoumss.org.managepage.login.Login;
 import testingui.diplomadoumss.org.utilsfiles.PropertyAccesor;
 
 import java.util.HashMap;
 import java.util.Map;
 
 public class FirstExample {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
-        WebDriver webDriver = DriverManager.getInstance().getWebDriver();
-        webDriver.get(PropertyAccesor.getInstance().getURL());
-        webDriver.quit();
+//        WebDriver webDriver = DriverManager.getInstance().getWebDriver();
+//        webDriver.get(PropertyAccesor.getInstance().getURL());
+//        webDriver.quit();
+
+        Login login = new Login();
+        login.initBrowser();
+        login.setEmail(PropertyAccesor.getInstance().getEmail());
+        login.setPassword(PropertyAccesor.getInstance().getPassword());
+        login.clickLoginButton();
+
+        Thread.sleep(20000);
+        login.finish();
     }
 
     public static void exampleMap(){
