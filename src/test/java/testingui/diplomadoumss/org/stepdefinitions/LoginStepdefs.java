@@ -1,6 +1,5 @@
-package testingui.diplomadoumss.org.stepsdefinitions;
+package testingui.diplomadoumss.org.stepdefinitions;
 
-import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import testingui.diplomadoumss.org.manageloadpage.LoadPage;
