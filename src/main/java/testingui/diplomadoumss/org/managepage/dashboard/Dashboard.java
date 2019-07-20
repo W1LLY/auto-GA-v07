@@ -31,9 +31,6 @@ public class Dashboard extends BasePage {
     @FindBy(xpath = "//a[@href = 'https://www.phptravels.net/admin-portal/admin/cars/settings']")
     private WebElement cars_settings;
 
-    @FindBy(xpath = "//nav[@id = 'sidebar']")
-    private WebElement sidebar;
-
     public Dashboard() {
 //        isWebElementVisible(bookingLink);
         avoidToUse(3);
@@ -73,7 +70,7 @@ public class Dashboard extends BasePage {
         return new CarsSettings();
     }
 
-    public void fullScreen(boolean isFull) {
+    private void fullScreen(boolean isFull) {
         if (isFull)
             DriverManager.getInstance().getWebDriver().manage().window().fullscreen();
         else
