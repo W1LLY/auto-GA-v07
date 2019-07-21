@@ -18,28 +18,28 @@ public class Login extends BasePage {
     private WebElement emailTextField;
 
     @FindBy(xpath = "//input[@name='password' and @type='password']")
-    private WebElement passwordField;
+private WebElement passwordTextField;
 
-    @FindBy(xpath = "//button[@type='submit']")
-    private WebElement buttonField;
+    @FindBy(xpath="//button[@type='submit']")
+    private WebElement loginButton;
 
     public Login() {
 //        isWebElementVisible(loginButton);
         avoidToUse(2);
     }
 
-    public Login setEmail(String email) {
+    public Login setEmail(String email){
         fillWebElement(emailTextField, email);
         return this;
     }
 
-    public Login setPassword(String password) {
-        fillWebElement(passwordField, password);
+    public Login setPassword(String password){
+        fillWebElement(passwordTextField, password);
         return this;
     }
 
     public Dashboard clickLoginButton() {
-        clickWebElement(buttonField);
+        clickWebElement(loginButton);
         return new Dashboard();
     }
 

@@ -1,6 +1,6 @@
-Feature: Validaciones de la pagina de login
+Feature: Validactiones de la pagina de Login
 
-  Scenario: Cargar pagina PHP Travels
-    Given I load PHP Travels
-    And Set my credentials on 'Login' page
+  Scenario: Cargar Pagina PHP Travels
+    Given I load PHP travels
+    And set my credencials  on 'Login' page
     And click 'Cars' link on 'Left Panel' page
