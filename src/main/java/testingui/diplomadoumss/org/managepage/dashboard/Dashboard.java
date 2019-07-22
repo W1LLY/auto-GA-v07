@@ -6,6 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import testingui.diplomadoumss.org.core.DriverManager;
 import testingui.diplomadoumss.org.managepage.BasePage;
 import testingui.diplomadoumss.org.managepage.cars.Cars;
+import testingui.diplomadoumss.org.managepage.cars.CarsCars;
 import testingui.diplomadoumss.org.managepage.cars.CarsSettings;
 
 import static testingui.diplomadoumss.org.manageevents.Event.avoidToUse;
@@ -35,6 +36,10 @@ public class Dashboard extends BasePage {
     @FindBy(xpath = "//a[@href = 'https://www.phptravels.net/admin-portal/admin/cars/extras']")
     private WebElement option_extras;
 
+    @FindBy(xpath = "//a[@id = '14' and @title = 'DELETE']")
+    private WebElement deleteButton;
+
+
     public Dashboard() {
 //        isWebElementVisible(bookingLink);
         avoidToUse(5);
@@ -53,6 +58,11 @@ public class Dashboard extends BasePage {
     public Dashboard clickCarsCars() {
         clickWebElement(option_extras);
         return this;
+    }
+
+    public CarsCars clickDeleteButton() {
+        clickWebElement(deleteButton);
+        return new CarsCars();
     }
 
     public void clickCars() {
