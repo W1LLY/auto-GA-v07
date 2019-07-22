@@ -33,7 +33,7 @@ public class Dashboard extends BasePage {
 
     public Dashboard() {
 //        isWebElementVisible(bookingLink);
-        avoidToUse(3);
+        avoidToUse(6);
     }
 
     public Dashboard clickCarsExpand() {
