@@ -3,6 +3,7 @@ package testingui.diplomadoumss.org.managepage.dashboard;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import testingui.diplomadoumss.org.core.DriverManager;
 import testingui.diplomadoumss.org.managepage.BasePage;
 import testingui.diplomadoumss.org.managepage.cars.Cars;
 import testingui.diplomadoumss.org.managepage.cars.CarsSettings;
@@ -15,6 +16,7 @@ import static testingui.diplomadoumss.org.manageevents.Event.clickWebElement;
  * @project testingui.diplomadoumss.org
  */
 public class Dashboard extends BasePage {
+
     @FindBy(xpath = "//a[@href='#Cars']")
     private WebElement cars;
 
@@ -30,21 +32,8 @@ public class Dashboard extends BasePage {
     @FindBy(xpath = "//a[@href = 'https://www.phptravels.net/admin-portal/admin/cars/settings']")
     private WebElement cars_settings;
 
-    public Dashboard() {
-//        isWebElementVisible(bookingLink);
-        avoidToUse(3);
- * @author Juan
- */
-public class Dashboard extends BasePage {
-
-    @FindBy(xpath = "//ul[@id='social-sidebar-menu' and @class='list-unstyled components']")
-    private WebElement leftPanel;
-
-    @FindBy(xpath = "//a[@href='#Cars']")
-    private WebElement carsExpand;
-
     @FindBy(xpath = "//a[@href = 'https://www.phptravels.net/admin-portal/admin/cars/extras']")
-    private WebElement extrasExpand;
+    private WebElement option_extras;
 
     public Dashboard() {
 //        isWebElementVisible(bookingLink);
@@ -57,8 +46,15 @@ public class Dashboard extends BasePage {
     }
 
     public Dashboard clickExtraExpand() {
-        clickWebElement(extrasExpand);
+        clickWebElement(option_extras);
         return this;
+    }
+
+    public Dashboard clickCarsCars() {
+        clickWebElement(option_extras);
+        return this;
+    }
+
     public void clickCars() {
         clickWebElement(cars);
     }

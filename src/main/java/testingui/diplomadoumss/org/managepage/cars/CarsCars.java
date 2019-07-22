@@ -5,5 +5,5 @@ import testingui.diplomadoumss.org.managepage.BasePage;
 /**
  * @author Juan Montaño
  */
-public class Extra extends BasePage {
+public class CarsCars extends BasePage {
 }
