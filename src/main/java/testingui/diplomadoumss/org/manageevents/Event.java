@@ -2,6 +2,7 @@ package testingui.diplomadoumss.org.manageevents;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import testingui.diplomadoumss.org.core.DriverManager;
 
 /**
@@ -18,6 +19,16 @@ public class Event {
         isWebElementVisible(element);
         element.clear();
         element.sendKeys(value);
+    }
+
+    public static void selectedDropdown(Select select, int position) {
+        select.selectByIndex(position);
+    }
+
+    public static void fillWebElementNumber(WebElement element, int number) {
+        isWebElementVisible(element);
+        element.clear();
+        element.sendKeys(String.valueOf(number));
     }
 
     public static void isWebElementVisible(WebElement element){
