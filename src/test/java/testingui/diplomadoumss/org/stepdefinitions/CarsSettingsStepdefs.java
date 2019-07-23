@@ -15,10 +15,10 @@ public class CarsSettingsStepdefs {
 
     private CarsSettings settings;
 
-    @Given("^I load page of Dashboard$")
-    public void iLoadPageOfLogin() {
-        dashboard = LoadPage.loadPHPTravelsDashboard();
-    }
+//    @Given("^I load page of Dashboard$")
+//    public void iLoadPageOfLogin() {
+//        dashboard = LoadPage.loadPHPTravelsDashboard();
+//    }
 
     @And("^click on Cars and Cars Settings of Left Panel$")
     public void clickOnCarsAndCarsSettingsOfLeftPanel() throws Throwable {

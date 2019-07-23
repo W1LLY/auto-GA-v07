@@ -5,11 +5,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import testingui.diplomadoumss.org.core.DriverManager;
 import testingui.diplomadoumss.org.managepage.BasePage;
+import testingui.diplomadoumss.org.managepage.accounts.Accounts;
 import testingui.diplomadoumss.org.managepage.cars.Cars;
 import testingui.diplomadoumss.org.managepage.cars.CarsSettings;
 
-import static testingui.diplomadoumss.org.manageevents.Event.avoidToUse;
-import static testingui.diplomadoumss.org.manageevents.Event.clickWebElement;
+import static testingui.diplomadoumss.org.manageevents.Event.*;
 
 /**
  * @author Marcelo Garay
@@ -31,9 +31,24 @@ public class Dashboard extends BasePage {
     @FindBy(xpath = "//a[@href = 'https://www.phptravels.net/admin-portal/admin/cars/settings']")
     private WebElement cars_settings;
 
+    @FindBy(xpath = "//a[@href='#ACCOUNTS']")
+    private WebElement accounts;
+
+    @FindBy(xpath = "//a[text()='Customers']")
+    private WebElement customersLink;
+
     public Dashboard() {
 //        isWebElementVisible(bookingLink);
         avoidToUse(6);
+    }
+
+    public void clickAccounts() {
+        clickWebElement(accounts);
+    }
+
+    public void clickCustomerLink() {
+        isWebElementVisible(customersLink);
+        clickWebElement(customersLink);
     }
 
     public Dashboard clickCarsExpand() {
@@ -68,6 +83,15 @@ public class Dashboard extends BasePage {
         fullScreen(false);
 
         return new CarsSettings();
+    }
+
+    public Accounts selectCustomerSettings() throws InterruptedException {
+        avoidToUse(1);
+        clickAccounts();
+        avoidToUse(1);
+        clickCustomerLink();
+
+        return new Accounts();
     }
 
     private void fullScreen(boolean isFull) {
