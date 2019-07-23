@@ -46,8 +46,8 @@ public class CustomersDashboard extends BasePage {
         avoidToUse(3);
     }
 
-    public CustomersDashboard clickCarsExpand() {
-        clickWebElement(accountsExpand);
-        return this;
-    }
+//    public CustomersDashboard clickCarsExpand() {
+//        clickWebElement(accountsExpand);
+//        return this;
+//    }
 }
