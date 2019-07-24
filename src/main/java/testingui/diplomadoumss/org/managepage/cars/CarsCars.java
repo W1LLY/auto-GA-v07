@@ -12,7 +12,7 @@ import static testingui.diplomadoumss.org.manageevents.Event.clickWebElement;
  */
 public class CarsCars extends BasePage {
 
-    @FindBy(xpath = "//a[@id = '14' and @title = 'DELETE']")
+    @FindBy(xpath = "//a[@id = '10' and @title = 'DELETE']")
     private WebElement deleteButton;
 
     public CarsCars() {

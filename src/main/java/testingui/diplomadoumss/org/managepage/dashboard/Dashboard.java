@@ -5,7 +5,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import testingui.diplomadoumss.org.core.DriverManager;
 import testingui.diplomadoumss.org.managepage.BasePage;
-import testingui.diplomadoumss.org.managepage.cars.Cars;
 import testingui.diplomadoumss.org.managepage.cars.CarsCars;
 import testingui.diplomadoumss.org.managepage.cars.CarsSettings;
 
@@ -69,19 +68,15 @@ public class Dashboard extends BasePage {
         clickWebElement(cars);
     }
 
-    public void clickOptionCars() {
+    public CarsCars selectOptionCarsCars() throws InterruptedException {
+        clickCars();
+        Thread.sleep(2000);
         clickWebElement(option_cars);
+        return new CarsCars();
     }
 
     public void clickOptionCarsSettings() {
         clickWebElement(cars_settings);
-    }
-
-    public Cars selectCars() {
-        clickCars();
-        clickOptionCars();
-
-        return new Cars();
     }
 
     public CarsSettings selectCarsSettings() throws InterruptedException {

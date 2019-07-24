@@ -28,6 +28,6 @@ public class CarsCarsStepdefs {
 
     @When("^click 'CARS' sub link over 'left panel' page$")
     public void clickCARSSubLinkOverLeftPanelPage() throws Throwable {
-        dashboard.clickOptionCars();
+        dashboard.selectOptionCarsCars();
     }
 }
