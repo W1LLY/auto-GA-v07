@@ -21,11 +21,11 @@ public class Login extends BasePage {
     private WebElement passwordField;
 
     @FindBy(xpath = "//button[@type='submit']")
-    private WebElement buttonField;
+    private WebElement loginButton;
 
     public Login() {
         //isWebElementVisible(emailTextField);
-        //isWebElementClickable(buttonField);
+        //isWebElementClickable(loginButton);
         avoidToUse(13000);
     }
 
@@ -46,8 +46,12 @@ public class Login extends BasePage {
     }
 
     public Dashboard clickLoginButton() {
-        clickWebElement(buttonField);
+        clickWebElement(loginButton);
         return new Dashboard();
+    }
+
+    public String getLoginLabelButton() {
+        return getWebElementText(loginButton);
     }
 
 }

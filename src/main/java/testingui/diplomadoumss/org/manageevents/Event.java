@@ -35,4 +35,8 @@ public class Event {
 
         }
     }
+
+    public static String getWebElementText(WebElement element) {
+        return element.getText();
+    }
 }
