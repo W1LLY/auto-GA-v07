@@ -6,6 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import testingui.diplomadoumss.org.core.DriverManager;
 import testingui.diplomadoumss.org.managepage.BasePage;
 import testingui.diplomadoumss.org.managepage.cars.CarsCars;
+import testingui.diplomadoumss.org.managepage.cars.CarsExtras;
 import testingui.diplomadoumss.org.managepage.cars.CarsSettings;
 
 import static testingui.diplomadoumss.org.manageevents.Event.avoidToUse;
@@ -73,6 +74,13 @@ public class Dashboard extends BasePage {
         Thread.sleep(2000);
         clickWebElement(option_cars);
         return new CarsCars();
+    }
+
+    public CarsExtras selectOptionCarsExtras() throws InterruptedException {
+        clickCars();
+        Thread.sleep(2000);
+        clickWebElement(option_extras);
+        return new CarsExtras();
     }
 
     public void clickOptionCarsSettings() {

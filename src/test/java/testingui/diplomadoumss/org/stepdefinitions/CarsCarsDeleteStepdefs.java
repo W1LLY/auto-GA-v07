@@ -31,7 +31,7 @@ public class CarsCarsDeleteStepdefs {
     }
 
     @And("^click option accept of pop pup$")
-    public void clickOptionAcceptOfPopPup() throws Throwable {
+    public void clickOptionAcceptOfPopPup() {
         DriverManager.getInstance().getWebDriver().switchTo().alert().accept();
     }
 }
