@@ -65,6 +65,21 @@ public class CarsSettings extends BasePage {
     @FindBy(xpath = "//button[@type = 'submit' and @class = 'btn btn-primary']")
     private WebElement submitGeneral;
 
+    @FindBy(xpath = "//a[@href = '#CARTYPES']")
+    private WebElement carTypes;
+
+    @FindBy(xpath = "//button[@data-target = '#ADD_CARS_TYPES']")
+    private WebElement addTypeButton;
+
+    @FindBy(xpath = "//*[@id=\"ADD_CARS_TYPES\"]/div[2]/div/form/div[2]/div[1]/div/input")
+    private WebElement nameTypeForm;
+
+    @FindBy(xpath = "//*[@id=\"ADD_CARS_TYPES\"]/div[2]/div/form/div[3]/button[2]")
+    private WebElement newTypeButton;
+
+    @FindBy(xpath = "//*[@id=\"16\"]")
+    private WebElement deleteButton;
+
     public CarsSettings() {
         avoidToUse(9);
         selectTarget = new Select(target);
@@ -176,7 +191,7 @@ public class CarsSettings extends BasePage {
 
     public CarsSettings clickSubmitButton() {
         clickWebElement(submitGeneral);
-
+        avoidToUse(11);
         return this;
     }
 
@@ -186,5 +201,49 @@ public class CarsSettings extends BasePage {
         jse.executeScript("scroll(0, 250);");
 
         return this;
+    }
+
+    public CarsSettings selectTypes() {
+        clickWebElement(carTypes);
+        return this;
+    }
+
+    public CarsSettings clickOnAddNewType() {
+        clickWebElement(addTypeButton);
+        return this;
+    }
+
+    public CarsSettings setNameFormType() {
+        avoidToUse(1);
+        fillWebElement(nameTypeForm, "New Type Test");
+        return this;
+    }
+
+    public CarsSettings clickOnAddFormType() {
+        clickWebElement(newTypeButton);
+        avoidToUse(5);
+        return this;
+    }
+
+    public CarsSettings clickOnDeleteTypeButton() {
+        clickWebElement(deleteButton);
+
+        return this;
+    }
+
+    public void clickOnOptionAccept() {
+        System.out.println(DriverManager.getInstance().getWebDriver().getWindowHandle());
+    }
+
+    public void clickOnNameList() {
+
+    }
+
+    public void clickOnEditButton() {
+
+    }
+
+    public void clickOnAllTypesCheckbox() {
+
     }
 }

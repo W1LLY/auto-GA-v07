@@ -24,6 +24,5 @@ public class LoadPage {
         Login login = new Login();
 
         return login.setCredentials();
-
     }
 }

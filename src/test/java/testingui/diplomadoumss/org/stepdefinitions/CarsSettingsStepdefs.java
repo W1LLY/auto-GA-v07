@@ -1,5 +1,6 @@
 package testingui.diplomadoumss.org.stepdefinitions;
 
+import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -11,7 +12,7 @@ import testingui.diplomadoumss.org.managepage.dashboard.Dashboard;
  * @author Willy Kelvis Sanchez Rojas
  */
 public class CarsSettingsStepdefs {
-    private Dashboard dashboard;
+    private Dashboard dashboard = new Dashboard();
 
     private CarsSettings settings;
 
@@ -20,13 +21,82 @@ public class CarsSettingsStepdefs {
         dashboard = LoadPage.loadPHPTravelsDashboard();
     }
 
-    @And("^click on Cars and Cars Settings of Left Panel$")
-    public void clickOnCarsAndCarsSettingsOfLeftPanel() throws Throwable {
-        settings = dashboard.selectCarsSettings();
+
+    @And("^click on option 'Cars' in Left Panel$")
+    public void clickOnOptionCarsInLeftPanel() throws Throwable {
+        dashboard.clickCars();
+    }
+
+    @And("^click on Cars Settings$")
+    public void clickOnCarsSettings() throws Throwable {
+        settings = dashboard.clickOptionCarsSettings();
     }
 
     @Then("^write new dates in form$")
     public void writeCustomForm() throws Throwable {
         settings = settings.setForm();
+    }
+
+    @And("^click on tab 'Types' of 'Cars Settings'$")
+    public void clickOnTabTypesOfCarsSettings() throws Throwable {
+        settings = settings.selectTypes();
+    }
+
+    @And("^click on 'Add' in list types$")
+    public void clickOnAddInListTypes() throws Throwable {
+        settings = settings.clickOnAddNewType();
+    }
+
+    @And("^set new name on 'Form Type'$")
+    public void setNewNameOnFormType() throws Throwable {
+        settings = settings.setNameFormType();
+    }
+
+    @And("^click on 'Add' in form create new Type$")
+    public void clickOnAddInFormCreateNewType() throws Throwable {
+        settings = settings.clickOnAddFormType();
+    }
+
+    @Then("^click on icon X from something type in list types$")
+    public void clickOnIconXFromSomethingTypeInListTypes() throws Throwable {
+        settings = settings.clickOnDeleteTypeButton();
+    }
+
+    @And("^click on option Aceptar in panel dialog$")
+    public void clickOnOptionAceptarInPanelDialog() throws Throwable {
+        settings.clickOnOptionAccept();
+    }
+
+    @And("^click on 'Name' in list of types$")
+    public void clickOnNameInListOfTypes() throws Throwable {
+        settings.clickOnNameList();
+    }
+
+    @And("^click on icon of edition in any type of list$")
+    public void clickOnIconOfEditionInAnyTypeOfList() throws Throwable {
+        settings.clickOnEditButton();
+    }
+
+    @And("^click on checkbox for select all types$")
+    public void clickOnCheckboxForSelectAllTypes() throws Throwable {
+        settings.clickOnAllTypesCheckbox();
+    }
+
+    @And("^click on option 'Accounts' in left panel$")
+    public void clickOnOptionAccountsInLeftPanel() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
+
+    @And("^click on option 'GuestCustomers'$")
+    public void clickOnOptionGuestCustomers() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
+    }
+
+    @And("^click on add new Customer$")
+    public void clickOnAddNewCustomer() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
     }
 }

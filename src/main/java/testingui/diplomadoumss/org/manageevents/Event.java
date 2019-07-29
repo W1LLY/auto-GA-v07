@@ -1,5 +1,6 @@
 package testingui.diplomadoumss.org.manageevents;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
@@ -31,6 +32,14 @@ public class Event {
         element.sendKeys(String.valueOf(number));
     }
 
+    public static void clickWebElement(By by) {
+        DriverManager.getInstance().getWebDriver().findElement(by).click();
+    }
+
+    public static void fillWebElement(By by) {
+        DriverManager.getInstance().getWebDriver().findElement(by).sendKeys("holas");
+    }
+
     public static void isWebElementVisible(WebElement element){
         DriverManager.getInstance().getWebDriverWait().until(ExpectedConditions.visibilityOf(element));
     }
@@ -45,5 +54,9 @@ public class Event {
         }catch (Exception e){
             System.out.println(e.fillInStackTrace());
         }
+    }
+
+    public static String getWebElementText(WebElement element) {
+        return element.getText();
     }
 }
