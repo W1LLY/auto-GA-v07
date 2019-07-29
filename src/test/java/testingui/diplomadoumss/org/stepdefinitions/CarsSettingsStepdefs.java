@@ -2,7 +2,6 @@ package testingui.diplomadoumss.org.stepdefinitions;
 
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
-import testingui.diplomadoumss.org.manageloadpage.LoadPage;
 import testingui.diplomadoumss.org.managepage.cars.CarsSettings;
 import testingui.diplomadoumss.org.managepage.dashboard.Dashboard;
 
@@ -16,11 +15,11 @@ public class CarsSettingsStepdefs {
 
     @Given("^I load page of Dashboard$")
     public void iLoadPageOfLogin() {
-        dashboard = LoadPage.loadPHPTravelsDashboard();
+        //dashboard = LoadPage.loadPHPTravelsDashboard();
     }
 
     @And("^click on Cars and Cars Settings of Left Panel$")
     public void clickOnCarsAndCarsSettingsOfLeftPanel() throws Throwable {
-        settings = dashboard.selectCarsSettings();
+        // settings = dashboard.selectCarsSettings();
     }
 }

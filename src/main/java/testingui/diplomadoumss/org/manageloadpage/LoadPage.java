@@ -3,6 +3,7 @@ package testingui.diplomadoumss.org.manageloadpage;
 import org.openqa.selenium.WebDriver;
 import testingui.diplomadoumss.org.core.DriverManager;
 import testingui.diplomadoumss.org.managepage.login.Login;
+import testingui.diplomadoumss.org.managepage.quiz.LeftPanelNaza;
 import testingui.diplomadoumss.org.utilsfiles.PropertyAccesor;
 
 /**
@@ -15,5 +16,11 @@ public class LoadPage {
         WebDriver webDriver = DriverManager.getInstance().getWebDriver();
         webDriver.get(PropertyAccesor.getInstance().getURL());
         return new Login();
+    }
+
+    public static LeftPanelNaza loadNazaPage() {
+        WebDriver webDriver = DriverManager.getInstance().getWebDriver();
+        webDriver.get(PropertyAccesor.getInstance().getUrlNaza());
+        return new LeftPanelNaza();
     }
 }
