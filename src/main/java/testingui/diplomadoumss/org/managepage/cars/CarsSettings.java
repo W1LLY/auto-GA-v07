@@ -1,5 +1,6 @@
 package testingui.diplomadoumss.org.managepage.cars;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -77,8 +78,23 @@ public class CarsSettings extends BasePage {
     @FindBy(xpath = "//*[@id=\"ADD_CARS_TYPES\"]/div[2]/div/form/div[3]/button[2]")
     private WebElement newTypeButton;
 
-    @FindBy(xpath = "//*[@id=\"16\"]")
+    @FindBy(xpath = "//*[@id=\"18\"]")
     private WebElement deleteButton;
+
+    @FindBy(xpath = "//*[@id=\"CARTYPES\"]/div[3]/div/div[1]/div[2]/table/thead/tr/th[3]")
+    private WebElement nameOption;
+
+    @FindBy(xpath = "//*[@id=\"CARTYPES\"]/div[3]/div/div[1]/div[2]/table/tbody/tr[1]/td[5]/span/a[1]")
+    private WebElement editOption;
+
+    @FindBy(xpath = "//*[@id=\"CARTYPES\"]/div[3]/div/div[1]/div[2]/table/thead/tr/th[1]/div/ins")
+    private WebElement selectAll;
+
+    @FindBy(xpath = "//*[@id=\"sett18\"]/div[2]/div/form/div[3]/button[1]")
+    private WebElement closeForm;
+
+    @FindBy(xpath = "//a[@href = '#PAYMENT']")
+    private WebElement tabPayment;
 
     public CarsSettings() {
         avoidToUse(9);
@@ -232,18 +248,33 @@ public class CarsSettings extends BasePage {
     }
 
     public void clickOnOptionAccept() {
-        System.out.println(DriverManager.getInstance().getWebDriver().getWindowHandle());
+        Alert alert = DriverManager.getInstance().getWebDriver().switchTo().alert();
+        alert.accept();
+        avoidToUse(10);
     }
 
     public void clickOnNameList() {
-
+        clickWebElement(nameOption);
+        avoidToUse(4);
     }
 
     public void clickOnEditButton() {
-
+        clickWebElement(editOption);
+        avoidToUse(4);
     }
 
     public void clickOnAllTypesCheckbox() {
+        clickWebElement(selectAll);
+        avoidToUse(4);
+    }
 
+    public void clickOnCloseForm() {
+        clickWebElement(closeForm);
+        avoidToUse(5);
+    }
+
+    public void clickOnTabPayment() {
+        clickWebElement(tabPayment);
+        avoidToUse(2);
     }
 }

@@ -1,10 +1,10 @@
 package testingui.diplomadoumss.org.stepdefinitions;
 
-import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import testingui.diplomadoumss.org.manageloadpage.LoadPage;
+import testingui.diplomadoumss.org.managepage.accounts.GuestCustomers;
 import testingui.diplomadoumss.org.managepage.cars.CarsSettings;
 import testingui.diplomadoumss.org.managepage.dashboard.Dashboard;
 
@@ -15,6 +15,8 @@ public class CarsSettingsStepdefs {
     private Dashboard dashboard = new Dashboard();
 
     private CarsSettings settings;
+
+    private GuestCustomers guestCustomers;
 
     @Given("^I load page of Dashboard$")
     public void iLoadPageOfLogin() {
@@ -84,19 +86,51 @@ public class CarsSettingsStepdefs {
 
     @And("^click on option 'Accounts' in left panel$")
     public void clickOnOptionAccountsInLeftPanel() throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
+        dashboard.clickAccounts();
     }
 
     @And("^click on option 'GuestCustomers'$")
     public void clickOnOptionGuestCustomers() throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
+        guestCustomers = dashboard.clickGuestCustomers();
     }
 
     @And("^click on add new Customer$")
     public void clickOnAddNewCustomer() throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
+        guestCustomers.clickOnAddNewCustomer();
+    }
+
+    @And("^click on Close button$")
+    public void clickOnCloseButton() throws Throwable {
+        settings.clickOnCloseForm();
+    }
+
+    @And("^click on tab 'Payment Method' of 'Cars Settings'$")
+    public void clickOnTabPaymentMethodOfCarsSettings() throws Throwable {
+        settings.clickOnTabPayment();
+    }
+
+    @And("^click on 'Submit' button$")
+    public void clickOnSubmitButton() throws Throwable {
+        guestCustomers.clickSubmitButton();
+    }
+
+    @And("^set lastName in form$")
+    public void setLastNameInForm() throws Throwable {
+        guestCustomers.fillLastName();
+    }
+
+    @And("^set email in form$")
+    public void setEmailInForm() throws Throwable {
+        guestCustomers.fillEmail();
+    }
+
+    @And("^set password in form$")
+    public void setPasswordInForm() throws Throwable {
+        guestCustomers.fillPassword();
+    }
+
+    @And("^select Country in form$")
+    public void selectCountryInForm() throws Throwable {
+        guestCustomers.selectCountry();
     }
 }

@@ -28,6 +28,7 @@ Feature: Validaciones de la pagina de cars settings
     And click on tab 'Types' of 'Cars Settings'
     Then click on icon X from something type in list types
     And click on option Aceptar in panel dialog
+    And click on tab 'Types' of 'Cars Settings'
     And click 'Logout' button on 'Header' page
 
   Scenario: Ordenar la lista de Types de acuerdo al nombre
@@ -46,13 +47,13 @@ Feature: Validaciones de la pagina de cars settings
     And click on Cars Settings
     And click on tab 'Types' of 'Cars Settings'
     And click on icon of edition in any type of list
+    And click on Close button
     And click 'Logout' button on 'Header' page
 
-  Scenario: Marcar todos los types de la lista de Types
+  Scenario: Verificar que se carga la lista de Payment methods
     Given I load PHP travels
     And set my credencials  on 'Login' page
     And click on option 'Cars' in Left Panel
     And click on Cars Settings
-    And click on tab 'Types' of 'Cars Settings'
-    And click on checkbox for select all types
+    And click on tab 'Payment Method' of 'Cars Settings'
     And click 'Logout' button on 'Header' page
