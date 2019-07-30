@@ -24,10 +24,6 @@ public class Nasa extends BasePage {
         return selectNasaListing();
     }
 
-    public Nasa clickEarthActive() {
-        return clickEarth();
-    }
-
     public Nasa selectNasaListing() {
         avoidToUse(3);
         isWebElementVisible(btnListing);
@@ -36,12 +32,12 @@ public class Nasa extends BasePage {
         return this;
     }
 
-    private Nasa clickEarth() {
+    public Earth clickEarth() {
         avoidToUse(3);
         isWebElementVisible(btnEarth);
         clickWebElement(btnEarth);
 
-        return this;
+        return new Earth();
     }
 
 

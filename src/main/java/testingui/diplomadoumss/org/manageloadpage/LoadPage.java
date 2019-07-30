@@ -41,10 +41,4 @@ public class LoadPage {
 
         return nasa.nasaListing();
     }
-
-    public static Nasa loadEarth() {
-        Nasa nasa = new Nasa();
-
-        return nasa.clickEarthActive();
-    }
 }
