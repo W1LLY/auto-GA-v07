@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import testingui.diplomadoumss.org.core.DriverManager;
 import testingui.diplomadoumss.org.managepage.dashboard.Dashboard;
 import testingui.diplomadoumss.org.managepage.login.Login;
+import testingui.diplomadoumss.org.managepage.nasa.DashboardNasa;
 import testingui.diplomadoumss.org.utilsfiles.PropertyAccesor;
 
 /**
@@ -25,5 +26,11 @@ public class LoadPage {
 
         return login.setCredentials();
 
+    }
+
+    public static DashboardNasa loadNasaPage() {
+        WebDriver webDriver = DriverManager.getInstance().getWebDriver();
+        webDriver.get(PropertyAccesor.getInstance().getUrlNasa());
+        return new DashboardNasa();
     }
 }
