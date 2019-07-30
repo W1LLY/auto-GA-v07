@@ -5,6 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import testingui.diplomadoumss.org.core.DriverManager;
 import testingui.diplomadoumss.org.managepage.BasePage;
+import testingui.diplomadoumss.org.managepage.Nasa.Nasa;
 import testingui.diplomadoumss.org.managepage.accounts.Accounts;
 import testingui.diplomadoumss.org.managepage.cars.Cars;
 import testingui.diplomadoumss.org.managepage.cars.CarsSettings;
@@ -37,6 +38,9 @@ public class Dashboard extends BasePage {
     @FindBy(xpath = "//a[text()='Customers']")
     private WebElement customersLink;
 
+    @FindBy(xpath = "//a[text()='NASA API Listing']")
+    private WebElement btnListing;
+
     public Dashboard() {
 //        isWebElementVisible(bookingLink);
         avoidToUse(6);
@@ -44,6 +48,14 @@ public class Dashboard extends BasePage {
 
     public void clickAccounts() {
         clickWebElement(accounts);
+    }
+
+    public Dashboard clickNasaListing(){
+        avoidToUse(2);
+        isWebElementVisible(btnListing);
+        clickWebElement(btnListing);
+
+        return this;
     }
 
     public void clickCustomerLink() {
@@ -92,6 +104,13 @@ public class Dashboard extends BasePage {
         clickCustomerLink();
 
         return new Accounts();
+    }
+
+    public Nasa selectNasaListing() throws InterruptedException {
+        avoidToUse(3);
+        clickNasaListing();
+
+        return new Nasa();
     }
 
     private void fullScreen(boolean isFull) {
