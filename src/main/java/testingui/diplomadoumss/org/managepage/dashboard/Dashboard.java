@@ -38,17 +38,15 @@ public class Dashboard extends BasePage {
     @FindBy(xpath = "//a[@href = 'https://www.phptravels.net/admin/accounts/guest/']")
     private WebElement guest_customers;
 
-    public Dashboard() {
-        avoidToUse(6);
-      
-    @FindBy(xpath = "//a[@href = 'https://www.phptravels.net/admin-portal/admin/cars/settings']")
-    private WebElement cars_settings;
-
     @FindBy(xpath = "//a[@href = 'https://www.phptravels.net/admin/cars/extras']")
     private WebElement option_extras;
 
     @FindBy(xpath = "//a[@id = '14' and @title = 'DELETE']")
     private WebElement deleteButton;
+
+    public Dashboard() {
+        avoidToUse(6);
+    }
 
     public Dashboard clickCarsExpand() {
         clickWebElement(carsExpand);
@@ -84,7 +82,6 @@ public class Dashboard extends BasePage {
     public void clickAccounts() {
         clickWebElement(By.xpath(String.format(PANEL_LEFT_OPTION, "ACCOUNTS")));
         avoidToUse(2);
-        clickWebElement(cars);
     }
 
     public CarsCars selectOptionCarsCars() throws InterruptedException {
@@ -98,10 +95,6 @@ public class Dashboard extends BasePage {
         Thread.sleep(2000);
         clickWebElement(option_extras);
         return new CarsExtras();
-    }
-
-    public void clickOptionCarsSettings() {
-        clickWebElement(cars_settings);
     }
 
     public GuestCustomers clickGuestCustomers() {
