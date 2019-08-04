@@ -17,7 +17,7 @@ public class Header extends BasePage {
 
     public Header logoutLink() {
         clickWebElement(logoutLink);
-        avoidToUse(4);
+        avoidToUse(5);
         return this;
     }
 }

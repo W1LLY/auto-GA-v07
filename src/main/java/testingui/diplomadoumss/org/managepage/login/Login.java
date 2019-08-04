@@ -49,4 +49,8 @@ private WebElement passwordTextField;
                 setPassword(PropertyAccesor.getInstance().getPassword()).
                 clickLoginButton();
     }
+
+    public String getLoginLabelButton() {
+        return getWebElementText(loginButton);
+    }
 }
