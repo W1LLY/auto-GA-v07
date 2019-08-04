@@ -20,10 +20,10 @@ public class CarsSettingsStepdefs {
 //        dashboard = LoadPage.loadPHPTravelsDashboard();
 //    }
 
-    @And("^click on Cars and Cars Settings of Left Panel$")
-    public void clickOnCarsAndCarsSettingsOfLeftPanel() throws Throwable {
-        settings = dashboard.selectCarsSettings();
-    }
+//    @And("^click on Cars and Cars Settings of Left Panel$")
+//    public void clickOnCarsAndCarsSettingsOfLeftPanel() throws Throwable {
+//        settings = dashboard.selectCarsSettings();
+//    }
 
     @Then("^write new dates in form$")
     public void writeCustomForm() throws Throwable {

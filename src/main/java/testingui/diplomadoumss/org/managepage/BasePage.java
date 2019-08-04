@@ -1,5 +1,6 @@
 package testingui.diplomadoumss.org.managepage;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import testingui.diplomadoumss.org.core.DriverManager;
@@ -11,8 +12,20 @@ import testingui.diplomadoumss.org.core.DriverManager;
 public class BasePage {
     protected WebDriver webDriver;
 
+    protected final String PANEL_LEFT_OPTION = "//*[@id=\"social-sidebar-menu\"]/li/a[@href='#%s']";
+
     public BasePage() {
         this.webDriver = DriverManager.getInstance().getWebDriver();
         PageFactory.initElements(webDriver, this);
+    }
+
+    public void clickOnOptionAccept() {
+        Alert alert = DriverManager.getInstance().getWebDriver().switchTo().alert();
+        alert.accept();
+    }
+
+    public void clickOnOptionCancel() {
+        Alert alert = DriverManager.getInstance().getWebDriver().switchTo().alert();
+        alert.dismiss();
     }
 }

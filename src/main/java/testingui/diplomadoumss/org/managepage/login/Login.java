@@ -18,9 +18,9 @@ public class Login extends BasePage {
     private WebElement emailTextField;
 
     @FindBy(xpath = "//input[@name='password' and @type='password']")
-private WebElement passwordTextField;
+    private WebElement passwordTextField;
 
-    @FindBy(xpath="//button[@type='submit']")
+    @FindBy(xpath = "//button[@type='submit']")
     private WebElement loginButton;
 
     public Login() {
@@ -28,12 +28,12 @@ private WebElement passwordTextField;
         avoidToUse(2);
     }
 
-    public Login setEmail(String email){
+    public Login setEmail(String email) {
         fillWebElement(emailTextField, email);
         return this;
     }
 
-    public Login setPassword(String password){
+    public Login setPassword(String password) {
         fillWebElement(passwordTextField, password);
         return this;
     }
@@ -47,5 +47,9 @@ private WebElement passwordTextField;
         return setEmail(PropertyAccesor.getInstance().getEmail()).
                 setPassword(PropertyAccesor.getInstance().getPassword()).
                 clickLoginButton();
+    }
+
+    public String getLoginLabelButton() {
+        return getWebElementText(loginButton);
     }
 }
