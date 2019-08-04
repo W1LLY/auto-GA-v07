@@ -6,6 +6,7 @@ import cucumber.api.java.en.Then;
 import org.openqa.selenium.json.Json;
 import org.testng.Assert;
 import testingui.diplomadoumss.org.managefile.ManageFile;
+import cucumber.api.java.en.When;
 import testingui.diplomadoumss.org.manageloadpage.LoadPage;
 import testingui.diplomadoumss.org.managepage.dashboard.Dashboard;
 import testingui.diplomadoumss.org.managepage.header.Header;
@@ -24,6 +25,7 @@ public class LoginStepdefs {
     @Given("^I load PHP travels$")
     public void iLoadPHPTravels() throws Throwable {
         login = LoadPage.loadPPHPTravels();
+
     }
 
     @And("^set my credencials  on 'Login' page$")
@@ -35,7 +37,7 @@ public class LoginStepdefs {
     public void clickCarsLinkOnLeftPanelPage() throws Throwable {
         dashboard.clickCarsExpand();
     }
-
+  
     @And("^fill \"([^\"]*)\" email field on 'Login' page$")
     public void fillEmailFieldOnLoginPage(String email) throws Throwable {
         login.setEmail(email);
@@ -60,6 +62,10 @@ public class LoginStepdefs {
 
     @And("^fill email field using json file on 'Login' page$")
     public void fillEmailFieldUsingJsonFileOnLoginPage() throws Throwable {
+    @When("^click 'extras' link on 'Left Panel' page$")
+    public void clickExtrasLinkOnLeftPanelPage() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        dashboard.clickExtraExpand();
 
     }
 }
