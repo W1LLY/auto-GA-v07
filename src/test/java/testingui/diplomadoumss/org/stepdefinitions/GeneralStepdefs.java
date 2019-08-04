@@ -11,7 +11,7 @@ import testingui.diplomadoumss.org.managepage.dashboard.Dashboard;
 /**
  * @author Willy Kelvis Sanchez Rojas
  */
-public class CarsSettingsStepdefs {
+public class GeneralStepdefs {
     private Dashboard dashboard = new Dashboard();
 
     private CarsSettings settings;
