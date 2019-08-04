@@ -8,16 +8,14 @@ import static testingui.diplomadoumss.org.manageevents.Event.avoidToUse;
 import static testingui.diplomadoumss.org.manageevents.Event.clickWebElement;
 
 /**
- * @author Marcelo Garay
- * @project testingui.diplomadoumss.org
+ * @author Willy Kelvis Sanchez Rojas
  */
 public class Header extends BasePage {
     @FindBy(xpath = "//a/strong[contains(text(), 'Logout')]")
     private WebElement logoutLink;
 
-    public Header logoutLink() {
+    public void logoutLink() {
         clickWebElement(logoutLink);
         avoidToUse(5);
-        return this;
     }
 }

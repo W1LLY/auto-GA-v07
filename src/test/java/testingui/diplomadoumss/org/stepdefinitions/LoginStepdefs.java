@@ -3,7 +3,6 @@ package testingui.diplomadoumss.org.stepdefinitions;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
-import cucumber.api.java.en.When;
 import org.openqa.selenium.json.Json;
 import org.testng.Assert;
 import testingui.diplomadoumss.org.managefile.ManageFile;
@@ -25,7 +24,6 @@ public class LoginStepdefs {
     @Given("^I load PHP travels$")
     public void iLoadPHPTravels() throws Throwable {
         login = LoadPage.loadPPHPTravels();
-
     }
 
     @And("^set my credencials  on 'Login' page$")
@@ -63,17 +61,5 @@ public class LoginStepdefs {
     @And("^fill email field using json file on 'Login' page$")
     public void fillEmailFieldUsingJsonFileOnLoginPage() throws Throwable {
 
-    }
-
-    @When("^click 'extras' link on 'Left Panel' page$")
-    public void clickExtrasLinkOnLeftPanelPage() throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        dashboard.clickExtraExpand();
-
-    }
-
-    @And("^set credencials  on 'Login' page$")
-    public void setCredencialsOnLoginPage() throws Throwable {
-        dashboard = login.setCredentials();
     }
 }

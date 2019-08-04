@@ -40,7 +40,7 @@ public class Event {
         DriverManager.getInstance().getWebDriver().findElement(by).sendKeys("holas");
     }
 
-    public static void isWebElementVisible(WebElement element){
+    public static void isWebElementVisible(WebElement element) {
         DriverManager.getInstance().getWebDriverWait().until(ExpectedConditions.visibilityOf(element));
     }
 
