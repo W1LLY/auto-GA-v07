@@ -1,7 +1,10 @@
 package testingui.diplomadoumss.org.managepage.accounts;
 
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import testingui.diplomadoumss.org.core.DriverManager;
 import testingui.diplomadoumss.org.managepage.BasePage;
 
 import static testingui.diplomadoumss.org.manageevents.Event.avoidToUse;
@@ -29,6 +32,18 @@ public class AccountsCustomers extends BasePage {
 
     @FindBy(xpath = "//a[text()= 'Customers']")
     private WebElement customersOption;
+
+    @FindBy(xpath = "//button[text()= 'All']")
+    private WebElement allOption;
+
+    @FindBy(xpath = "//*[@id='s2id_autogen1']/a")
+    private WebElement selectCountry;
+
+    @FindBy(xpath = "//*[@id='select2-drop']/ul/li[6]/div")
+    private WebElement optionArgentina;
+
+    @FindBy(xpath = "//button[text()= 'Submit']")
+    private WebElement submitButton;
 
     public AccountsCustomers() {
         avoidToUse(3);
@@ -60,9 +75,28 @@ public class AccountsCustomers extends BasePage {
     }
 
     public void clickOnAddButtonToCreateCustomer() {
+        scroll();
+        avoidToUse(2);
+        clickWebElement(submitButton);
+        avoidToUse(10);
     }
 
     public void clickOn100Option() {
         clickWebElement(oneHundredButon);
+    }
+
+    public void clickOnAllOption() {
+        clickWebElement(allOption);
+    }
+
+    public void clickOnAnyCountry() {
+        clickWebElement(selectCountry);
+        clickWebElement(optionArgentina);
+    }
+
+    private void scroll() {
+        WebDriver driver = DriverManager.getInstance().getWebDriver();
+        JavascriptExecutor jse = (JavascriptExecutor) driver;
+        jse.executeScript("scroll(0, 250);");
     }
 }

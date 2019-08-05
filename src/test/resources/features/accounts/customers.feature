@@ -66,3 +66,21 @@ Feature: Validaciones en Accounts customers
     And click on option 'Customers'
     And click on option delete in any customer of list
     And click 'Logout' button on 'Header' page
+
+  Scenario: Verificar que al presionar la opcion ALL se muestran todos los customers
+    Given I load PHP travels
+    And set my credencials  on 'Login' page
+    And click on option 'Accounts' in left panel
+    And click on option 'Customers'
+    And click on option 'All' in list
+    And click 'Logout' button on 'Header' page
+
+  Scenario: Verificar si el mensaje 'Changes saved' se muestra al editar un customer
+    Given I load PHP travels
+    And set my credencials  on 'Login' page
+    And click on option 'Accounts' in left panel
+    And click on option 'Customers'
+    And click on option edit in any customer of list
+    And select any country on form edit customer
+    And click on button Add in form to create customer
+    And click 'Logout' button on 'Header' page

@@ -62,4 +62,14 @@ public class GeneralStepdefs {
     public void clickOnOptionOneHundredInList() throws Throwable {
         accountsCustomers.clickOn100Option();
     }
+
+    @And("^click on option 'All' in list$")
+    public void clickOnOptionAllInList() throws Throwable {
+        accountsCustomers.clickOnAllOption();
+    }
+
+    @And("^select any country on form edit customer$")
+    public void selectAnyCountryOnFormEditCustomer() throws Throwable {
+        accountsCustomers.clickOnAnyCountry();
+    }
 }
