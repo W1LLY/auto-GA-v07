@@ -25,7 +25,7 @@ public class Login extends BasePage {
 
     public Login() {
 //        isWebElementVisible(loginButton);
-        avoidToUse(2);
+        avoidToUse(3);
     }
 
     public Login setEmail(String email) {
@@ -44,6 +44,7 @@ public class Login extends BasePage {
     }
 
     public Dashboard setCredentials() {
+        avoidToUse(2);
         return setEmail(PropertyAccesor.getInstance().getEmail()).
                 setPassword(PropertyAccesor.getInstance().getPassword()).
                 clickLoginButton();
