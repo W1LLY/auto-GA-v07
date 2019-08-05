@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import testingui.diplomadoumss.org.core.DriverManager;
 import testingui.diplomadoumss.org.managepage.BasePage;
+import testingui.diplomadoumss.org.managepage.accounts.AccountsCustomers;
 import testingui.diplomadoumss.org.managepage.accounts.GuestCustomers;
 import testingui.diplomadoumss.org.managepage.cars.CarsCars;
 import testingui.diplomadoumss.org.managepage.cars.CarsExtras;
@@ -35,6 +36,9 @@ public class Dashboard extends BasePage {
     @FindBy(xpath = "//a[@href = 'https://www.phptravels.net/admin/cars/settings']")
     private WebElement cars_settings;
 
+    @FindBy(xpath = "//a[@href = 'https://www.phptravels.net/admin/location/location_list']")
+    private WebElement locationList;
+  
     @FindBy(xpath = "//a[@href = 'https://www.phptravels.net/admin/accounts/guest/']")
     private WebElement guest_customers;
 
@@ -107,5 +111,13 @@ public class Dashboard extends BasePage {
             DriverManager.getInstance().getWebDriver().manage().window().fullscreen();
         else
             DriverManager.getInstance().getWebDriver().manage().window().maximize();
+    }
+
+    public void clickOptionAccounts() {
+        clickWebElement(By.xpath(String.format(PANEL_LEFT_OPTION, "ACCOUNTS")));
+    }
+
+    public AccountsCustomers clickOnCustomers() {
+        return new AccountsCustomers();
     }
 }

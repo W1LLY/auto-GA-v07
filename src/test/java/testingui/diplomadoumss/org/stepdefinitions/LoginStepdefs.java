@@ -22,7 +22,6 @@ public class LoginStepdefs {
     private Header header = new Header();
     private Json files = ManageFile.getInstance().getJsonFile("simplejson.json");
 
-
     @Given("^I load PHP travels$")
     public void iLoadPHPTravels() throws Throwable {
         login = LoadPage.loadPPHPTravels();
@@ -72,7 +71,6 @@ public class LoginStepdefs {
         dashboard.clickExtraExpand();
 
     }
-
 
     @And("^set credencials  on 'Login' page$")
     public void setCredencialsOnLoginPage() throws Throwable {

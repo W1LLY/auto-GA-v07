@@ -11,12 +11,12 @@ import testingui.diplomadoumss.org.core.DriverManager;
  * @project testingui.diplomadoumss.org
  */
 public class Event {
-    public static void clickWebElement(WebElement element){
+    public static void clickWebElement(WebElement element) {
         isWebElementClickable(element);
         element.click();
     }
 
-    public static void fillWebElement(WebElement element, String value){
+    public static void fillWebElement(WebElement element, String value) {
         isWebElementVisible(element);
         element.clear();
         element.sendKeys(value);
@@ -44,14 +44,14 @@ public class Event {
         DriverManager.getInstance().getWebDriverWait().until(ExpectedConditions.visibilityOf(element));
     }
 
-    public static void isWebElementClickable(WebElement element){
+    public static void isWebElementClickable(WebElement element) {
         DriverManager.getInstance().getWebDriverWait().until(ExpectedConditions.elementToBeClickable(element));
     }
 
-    public static void avoidToUse(int seconds){
-        try{
+    public static void avoidToUse(int seconds) {
+        try {
             Thread.sleep(seconds * 1000);
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println(e.fillInStackTrace());
         }
     }
