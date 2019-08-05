@@ -6,7 +6,7 @@ import org.testng.annotations.AfterTest;
 import testingui.diplomadoumss.org.core.DriverManager;
 
 @CucumberOptions(
-        features = {"src/test/resources/features/"},
+        features = {"src/test/resources/features"},
         format = {"pretty",
                 "html:build/cucumber",
                 "json:build/cucumber/cucumber.json",
