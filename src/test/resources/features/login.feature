@@ -1,9 +1,14 @@
 Feature: Validactiones de la pagina de Login
 
-  Scenario: Cargar Pagina PHP Travels
+  Scenario: Validar "Login php travel" label en la pagina de LOGIN
     Given I load PHP travels
     And set my credencials  on 'Login' page
     And click 'Cars' link on 'Left Panel' page
+
+  Scenario: Cargar Pagina PHP Travel
+    Given I load PHP travels
+    And set my credencials at 'Login php travel' page
+    And click 'Location' link on 'Left Panel' page
 
   #  Background: Load main page
 

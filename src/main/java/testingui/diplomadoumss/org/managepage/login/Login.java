@@ -1,9 +1,9 @@
 package testingui.diplomadoumss.org.managepage.login;
 
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import testingui.diplomadoumss.org.managepage.BasePage;
-import testingui.diplomadoumss.org.managepage.dashboard.Dashboard;
+import org.openqa.selenium.support.PageFactory;
 import testingui.diplomadoumss.org.utilsfiles.PropertyAccesor;
 
 import static testingui.diplomadoumss.org.manageevents.Event.*;
@@ -12,7 +12,9 @@ import static testingui.diplomadoumss.org.manageevents.Event.*;
  * @author Marcelo Garay
  * @project testingui.diplomadoumss.org
  */
-public class Login extends BasePage {
+public class Login {
+
+    WebDriver webDriver;
 
     @FindBy(xpath = "//input[@name='email' and @type='text']")
     private WebElement emailTextField;
@@ -23,12 +25,13 @@ public class Login extends BasePage {
     @FindBy(xpath = "//button[@type='submit']")
     private WebElement loginButton;
 
-    public Login() {
-//        isWebElementVisible(loginButton);
-        avoidToUse(3);
+    public Login(WebDriver webDriver) {
+        this.webDriver = webDriver;
+        PageFactory.initElements(webDriver, this);
     }
 
     public Login setEmail(String email) {
+        avoidToUse(3);
         fillWebElement(emailTextField, email);
         return this;
     }
@@ -38,16 +41,20 @@ public class Login extends BasePage {
         return this;
     }
 
-    public Dashboard clickLoginButton() {
+    public void clickLoginButton() {
         clickWebElement(loginButton);
-        return new Dashboard();
+        //return new Dashboard();
     }
 
-    public Dashboard setCredentials() {
+    public void setCredentials() {
         avoidToUse(2);
-        return setEmail(PropertyAccesor.getInstance().getEmail()).
+        setEmail(PropertyAccesor.getInstance().getEmail()).
                 setPassword(PropertyAccesor.getInstance().getPassword()).
                 clickLoginButton();
+    }
+
+    public void loadPHPTravels() {
+        webDriver.get(PropertyAccesor.getInstance().getURL());
     }
 
     public String getLoginLabelButton() {
