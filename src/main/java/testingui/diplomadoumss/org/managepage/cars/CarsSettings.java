@@ -102,7 +102,6 @@ public class CarsSettings extends BasePage {
         selectDisplayOrder = new Select(displayOrder);
         selectDisplayListings = new Select(displayOrderListings);
         selectDisplaySearch = new Select(displayOrderSearch);
-
     }
 
     public CarsSettings setForm() {
