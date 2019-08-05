@@ -113,10 +113,6 @@ public class Dashboard extends BasePage {
             DriverManager.getInstance().getWebDriver().manage().window().maximize();
     }
 
-    public void clickOptionAccounts() {
-        clickWebElement(By.xpath(String.format(PANEL_LEFT_OPTION, "ACCOUNTS")));
-    }
-
     public AccountsCustomers clickOnCustomers() {
         return new AccountsCustomers();
     }
