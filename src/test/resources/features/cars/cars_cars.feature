@@ -2,20 +2,20 @@ Feature: Validaciones de la pagina PHPTravels
 
   Scenario: Verificar expand cuando se hace click opcion CARS
     Given I load PHP travels
-    And set credencials  on 'Login' page
+    And set my credencials  on 'Login' page
     And click 'CARS' link on 'Left Panel'
     And click 'Logout' button on 'Header' page
 
   Scenario: Verificar click opcion extras
     Given I load PHP travels
-    And set credencials  on 'Login' page
+    And set my credencials  on 'Login' page
     And click 'CARS' link on 'Left Panel'
     And click 'EXTRAS' link on 'left panel'
     And click 'Logout' button on 'Header' page
 
   Scenario Outline: Verificar formulario edit
     Given I load PHP travels
-    And set credencials  on 'Login' page
+    And set my credencials  on 'Login' page
     And click 'CARS' link on 'Left Panel'
     And click 'EXTRAS' link on 'left panel'
     And click 'Edit' link on icon 'right panel'
@@ -30,7 +30,7 @@ Feature: Validaciones de la pagina PHPTravels
 
   Scenario: Verificar formulario al haser click opcion ADD un car
     Given I load PHP travels
-    And set credencials  on 'Login' page
+    And set my credencials  on 'Login' page
     And click 'CARS' link on 'Left Panel'
     And click 'EXTRAS' link on 'left panel'
     And click 'ADD' button añadir
@@ -38,7 +38,7 @@ Feature: Validaciones de la pagina PHPTravels
 
   Scenario Outline: Verificar añadir un car
     Given I load PHP travels
-    And set credencials  on 'Login' page
+    And set my credencials  on 'Login' page
     And click 'CARS' link on 'Left Panel'
     And click 'EXTRAS' link on 'left panel'
     And click 'ADD' button añadir
@@ -53,7 +53,7 @@ Feature: Validaciones de la pagina PHPTravels
 
   Scenario: Verificar 'extra eliminado' cuando se hace click opcion delete
     Given I load PHP travels
-    And set credencials  on 'Login' page
+    And set my credencials  on 'Login' page
     And click 'CARS' link on 'Left Panel'
     And click 'EXTRAS' link on 'left panel'
     And click 'Icon delete'' link delete extras
@@ -62,14 +62,14 @@ Feature: Validaciones de la pagina PHPTravels
 
   Scenario: Verificar 'Lista cars' click opcion CARS
     Given I load PHP travels
-    And set credencials  on 'Login' page
+    And set my credencials  on 'Login' page
     And click 'CARS' link on 'Left Panel'
     And click 'CARS' link opcion cars-cars
     And click 'Logout' button on 'Header' page
 
   Scenario Outline: Vericar formulario edit car
     Given I load PHP travels
-    And set credencials  on 'Login' page
+    And set my credencials  on 'Login' page
     And click 'CARS' link on 'Left Panel'
     And click 'CARS' link opcion cars-cars
     And click 'Icon edit' opcion edit car
@@ -82,7 +82,7 @@ Feature: Validaciones de la pagina PHPTravels
 
   Scenario: verificar formulario delete car
     Given I load PHP travels
-    And set credencials  on 'Login' page
+    And set my credencials  on 'Login' page
     And click 'CARS' link on 'Left Panel'
     And click 'CARS' link opcion cars-cars
     And click 'Icon delete' opcion delete car
@@ -92,7 +92,7 @@ Feature: Validaciones de la pagina PHPTravels
 
   Scenario Outline: Verificar 'ADD' opcion add car
     Given I load PHP travels
-    And set credencials  on 'Login' page
+    And set my credencials  on 'Login' page
     And click 'CARS' link on 'Left Panel'
     And click 'CARS' link opcion cars-cars
     And click 'ADD' link opcion add car
